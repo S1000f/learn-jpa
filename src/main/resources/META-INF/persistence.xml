@@ -15,6 +15,39 @@
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.use_sql_comments" value="true"/>
             <property name="hibernate.id.new_generator_mappings" value="true"/>
+<!--            DDL 을 자동 생성한다-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+<!--            이름을 언더바 형식으로 자동 변환하여 저장한다 hibernate 4 버전에서만 유효 -->
+<!--            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>-->
+
+<!--            위의 클래스를 하이버네이트 5 에서 사용할 수 있도록 옴겨온 구현체-->
+            <property name="hibernate.implicit_naming_strategy" value="jpa.start.NamingStrategyHibernate4Impl" />
+
+        </properties>
+    </persistence-unit>
+
+    <persistence-unit name="jpabook">
+        <properties>
+
+            <!-- 필수속성 -->
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/jpabook"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+            <!-- 옵션 -->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+            <property name="hibernate.id.new_generator_mappings" value="true"/>
+            <!--            DDL 을 자동 생성한다-->
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <!--            이름을 언더바 형식으로 자동 변환하여 저장한다 hibernate 4 버전에서만 유효 -->
+            <!--            <property name="hibernate.ejb.naming_strategy" value="org.hibernate.cfg.ImprovedNamingStrategy"/>-->
+
+            <!--            위의 클래스를 하이버네이트 5 에서 사용할 수 있도록 옴겨온 구현체-->
+            <property name="hibernate.implicit_naming_strategy" value="jpa.start.NamingStrategyHibernate4Impl" />
 
         </properties>
     </persistence-unit>

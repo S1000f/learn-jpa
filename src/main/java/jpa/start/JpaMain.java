@@ -12,7 +12,6 @@ public class JpaMain {
         EntityManager manager = managerFactory.createEntityManager();
 
         EntityTransaction transaction = manager.getTransaction();
-
         try {
             transaction.begin();
             logic(manager);
@@ -27,7 +26,7 @@ public class JpaMain {
 
     public static void logic(EntityManager manager) {
         String id = "myCat";
-        Member member = new Member();
+        MemberStart member = new MemberStart();
         member.setId(id);
         member.setUsername("milly");
         member.setAge(9);
@@ -39,11 +38,11 @@ public class JpaMain {
         member.setAge(3);
 
         // select
-        Member findMember = manager.find(Member.class, id);
+        MemberStart findMember = manager.find(MemberStart.class, id);
         System.out.println("findMember= " + findMember); // findMember= Member(id=myCat, username=milly, age=3)
 
         // select
-        List<Member> members = manager.createQuery("select d from Member d", Member.class).getResultList();
+        List<MemberStart> members = manager.createQuery("select d from Member d", MemberStart.class).getResultList();
         System.out.println("members.size= " + members.size()); // members.size= 1
 
         // delete
