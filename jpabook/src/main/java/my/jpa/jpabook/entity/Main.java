@@ -1,4 +1,4 @@
-package jpabook.model.entity;
+package my.jpa.jpabook.entity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

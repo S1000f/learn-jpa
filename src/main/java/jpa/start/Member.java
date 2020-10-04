@@ -1,17 +1,21 @@
 package jpa.start;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 @Table(name = "MEMBER", uniqueConstraints = {@UniqueConstraint(
         name = "NAME_AGE_UNIQUE",
         columnNames = {"NAME", "AGE"}
 )})
 @Entity
-public class MemberStart {
+public class Member {
 
     @Id
     @Column(name = "ID")

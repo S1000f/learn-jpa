@@ -1,21 +1,21 @@
-package jpabook.model.entity;
+package jpa.start.ch06.onetoone.monodireciton;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Data
+@Setter
+@Getter
 @Entity
-public class Item {
+public class Locker {
 
-    @Column(name = "ITEM_ID")
+    @Column(name = "LOCKER_ID")
     @GeneratedValue
     @Id
     private Long id;
     private String name;
-    private int price;
-    private int stockQuantity;
 }
